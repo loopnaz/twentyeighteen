@@ -1,0 +1,28 @@
+<style type="text/css">
+	{{ if eq $.Site.Params.minify true }}
+		{{- readFile "themes/twentyeighteen/static/css/style.min.css" | safeCSS }}
+	{{ else }}
+		{{- readFile "themes/twentyeighteen/static/css/style.css" | safeCSS }}
+	{{ end }}
+	{{ if and (.IsHome) (eq $.Site.Params.minify true) }}
+		{{- readFile "themes/twentyeighteen/static/css/home.min.css" | safeCSS }}
+	{{ else if .IsHome }}
+		{{- readFile "themes/twentyeighteen/static/css/home.css" | safeCSS }}
+	{{ end }}
+	{{ if and (eq .Kind "section") (eq $.Site.Params.minify true) }}
+		{{- readFile "themes/twentyeighteen/static/css/list.min.css" | safeCSS }}
+	{{ else if eq .Kind "section" }}
+		{{- readFile "themes/twentyeighteen/static/css/list.css" | safeCSS }}
+	{{ end }}
+	{{ if and (eq .Kind "taxonomyTerm") (eq $.Site.Params.minify true) }}
+		{{- readFile "themes/twentyeighteen/static/css/list.min.css" | safeCSS }}
+	{{ else if eq .Kind "taxonomyTerm" }}
+		{{- readFile "themes/twentyeighteen/static/css/list.css" | safeCSS }}
+	{{ end }}
+	{{ if and (.Params.form) (eq $.Site.Params.minify true) }}
+		{{- readFile "themes/twentyeighteen/static/css/form.min.css" | safeCSS }}
+	{{ else if .Params.form }}
+		{{- readFile "themes/twentyeighteen/static/css/form.css" | safeCSS }}
+	{{ end }}
+</style>
+

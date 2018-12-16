@@ -1,0 +1,6 @@
+<style type="text/css">
+	{{ if eq $.Site.Params.minify true }}{{ readFile "themes/twentyeighteen/static/css/style.min.css" | safeCSS }}
+	{{ else }}{{ readFile "/themes/twentyeighteen/static/css/style.css" | safeCSS }}
+	{{ end }}
+</style>
+
