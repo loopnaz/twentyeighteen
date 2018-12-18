@@ -1,0 +1,12 @@
+.avatar {
+	display: flex;
+	align-items: center;
+	margin-right: auto;
+}
+
+.avatar img {
+	border-radius: 50%;
+	display: inline;
+	margin-right: 0.5em;
+	width: 5em;
+}
