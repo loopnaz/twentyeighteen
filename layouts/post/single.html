@@ -18,7 +18,7 @@
 					{{end}}
 				{{end}}
 				</p>
-				<p class="publish-date">{{ .PublishDate.Format "Monday, January 3, 2006" }}</p>
+				<p class="publish-date">{{ .PublishDate.Format "Monday, January 2, 2006" }}</p>
 				{{if isset .Params "epigraph" }}
 					<blockquote>
 						{{.Params.epigraph.text | safeHTML}}
@@ -32,6 +32,7 @@
 						<a href="{{ .Permalink }}"><img src="{{ .Params.photo }}" alt="Author avatar"/></a>
 					  <figcaption>
 						  <a href="{{ .Permalink }}">{{ .Params.name.full }}</a>
+						  <div class="author-bio">{{ .Content }}</div>
 					  </figcaption>
 					</figure>
 				  {{ end }}
