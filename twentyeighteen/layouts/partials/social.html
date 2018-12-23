@@ -1,0 +1,46 @@
+<nav class="social">
+	<ul>
+		{{ with .Site.Params.social.twitter }}
+		<li>
+			<a class="twitter" href="https://twitter.com/{{.}}/">
+				{{ readFile "static/img/icons/twitter.svg" | safeHTML }}
+			</a>
+		</li>
+		{{ end }}
+		{{ with .Site.Params.social.facebook }}
+		<li>
+			<a class="facebook" href="https://facebook.com/{{.}}/">
+				{{ readFile "static/img/icons/facebook.svg" | safeHTML }}
+			</a>
+		</li>
+		{{ end }}
+		{{ with .Site.Params.social.linkedin }}
+		<li>
+			<a class="linkedin" href="https://www.linkedin.com/company/{{.}}/">
+				{{ readFile "static/img/icons/linkedin.svg" | safeHTML }}
+			</a>
+		</li>
+		{{ end }}
+		{{ with .Site.Params.social.googlePlus }}
+		<li>
+			<a class="linkedin" href="https://plus.google.com/{{.}}/">
+				{{ readFile "static/img/icons/linkedin.svg" | safeHTML }}
+			</a>
+		</li>
+		{{ end }}
+		{{ with .Site.Params.social.instagram }}
+		<li>
+			<a class="instagram" href="https://instagram.com/{{.}}/">
+				{{ readFile "static/img/icons/instagram.svg" | safeHTML }}
+			</a>
+		</li>
+		{{ end }}
+		{{ with .Site.Params.social.gitHub }}
+		<li>
+			<a class="github" href="https://github.com/{{.}}/">
+				{{ readFile "static/img/icons/github.svg" | safeHTML }}
+			</a>
+		</li>
+		{{ end }}
+	</ul>
+</nav>

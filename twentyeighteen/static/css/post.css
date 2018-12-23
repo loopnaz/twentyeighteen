@@ -1,6 +1,6 @@
 .avatar {
 	display: flex;
-	align-items: start;
+	align-items: center;
 	margin-right: auto;
 }
 
@@ -9,8 +9,4 @@
 	display: inline;
 	margin-right: 0.5em;
 	width: 5em;
-}
-
-.author-bio {
-	font-size: smaller;
 }
