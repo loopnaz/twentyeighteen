@@ -32,6 +32,7 @@
 						<a href="{{ .Permalink }}"><img src="{{ .Params.photo }}" alt="Author avatar"/></a>
 					  <figcaption>
 						  <a href="{{ .Permalink }}">{{ .Params.name.full }}</a>
+						  <div class="author-bio">{{ .Content }}</div>
 					  </figcaption>
 					</figure>
 				  {{ end }}
