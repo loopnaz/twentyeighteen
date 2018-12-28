@@ -1,0 +1,5 @@
+<script>
+	if ('querySelector' in document && 'addEventListener' in window && 'classList' in document.createElement('_')) {
+		{{ if eq $.Site.Params.minify true }}{{ readFile "/themes/twentyeighteen/static/js/main.min.js" | safeJS }}{{ else }}{{ readFile "/themes/twentyeighteen/static/js/main.js" | safeJS }}{{ end }}
+	}
+</script>

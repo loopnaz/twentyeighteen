@@ -1,0 +1,20 @@
+{{ define "main" }}
+	<main id="main">
+	<h1>{{ (pluralize (title .Type)) }}</h1>
+		<ul>
+			{{- range .Paginator.Pages }}
+				<li>
+					<h2><a href="{{.Permalink}}">{{.Title}}</a></h2>
+					<p>By 
+						{{- range .Params.authors }}
+							{{- with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize .)) }}
+								<span><a href="{{.Permalink}}">{{.Params.name.full}}</a><span>
+							{{ end }}
+						{{ end }}
+						<span>on {{.PublishDate.Format "Monday, January 2, 2006"}}</span>
+					</p>
+				</li>
+			{{ end }}
+		</ul>
+	</main>
+{{ end }}
