@@ -27,4 +27,7 @@
 	{{ with .Site.GetPage "section" "post" }}
 		{{- readFile "themes/twentyeighteen/static/css/post.css" | safeCSS }}
 	{{ end }}
+	{{ with .Site.GetPage "section" "bylaws" }}
+		{{- readFile "themes/twentyeighteen/static/css/bylaws.css" | safeCSS }}
+	{{ end }}
 </style>
