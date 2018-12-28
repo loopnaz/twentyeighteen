@@ -1,7 +1,5 @@
 <header id="site-header">
 	<h1 class="hidden">{{ .Site.Title }}</h1>
-	<div>
-		<a href="/">{{ readFile "static/img/svg/header-logo.svg" | safeHTML }}</a>
-	</div>
+		<a class="site-logo" href="/">{{ readFile "static/img/svg/header-logo.svg" | safeHTML }}</a>
 	{{- partial "header/site-nav.html" . }}
 </header>

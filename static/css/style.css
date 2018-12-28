@@ -1,7 +1,14 @@
 /* Normalize */
 html {
+	box-sizing: border-box;
 	line-height: 1.15;
 	-webkit-text-size-adjust: 100%;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
 }
 
 body,
@@ -17,6 +24,7 @@ h4,
 h5,
 iframe {
 	margin: 0 0 1em 0;
+	max-width: 100%;
 }
 
 section h2 {
@@ -69,7 +77,6 @@ main > section,
 main > article,
 .content,
 main > section {
-	justify-content: center;
 	align-items: center;
 }
 
@@ -197,6 +204,9 @@ button,
 
 .menu ul {
 	justify-content: space-around;
+	position: absolute;
+	width: 100%;
+	top: 32px;
 }
 
 .menu ul li {
@@ -206,6 +216,10 @@ button,
 /* Links */
 header a {
     color: inherit;
+}
+
+.site-logo {
+	max-width: 200px;
 }
 
 main a {
@@ -275,18 +289,12 @@ body > header {
 
 body > header svg {
 	fill: #fff;
-	height: 28px;
+	height: 100%;
 	width: auto;
-	padding-top: 2px;
-	padding-left: 2px;
-	margin-bottom: -2px;
+	padding: 2px;
 }
 
 /* Main */
-main {
-	padding-top: 32px;
-}
-
 main .center {
 	grid-column: span 2;
 }
@@ -305,9 +313,12 @@ body > footer {
 
 /* Content */
 .content {
-	padding: 1em;
 	width: calc(100% - 2em);
 	max-width: 49.5em;
+}
+
+main > article header:not(.background-image) {
+	padding-top: 32px;
 }
 
 main > article header.background-image {
@@ -319,6 +330,7 @@ main > article header.background-image {
     flex-direction: column;
     justify-content: center;
     width: 100%;
+	margin-bottom: 1em;
 }
 
 article header.background-image h1 {
@@ -410,7 +422,8 @@ footer nav ul,
 		display: flex;
 		flex-direction: row;
 		visibility: visible;
-		background-color: unset;
+		background-color: unset !important;
+		position: unset !important;
 	}
 
 	.menu ul li {

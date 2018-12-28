@@ -26,6 +26,7 @@
 	content: "Section " counter(section, decimal) ". ";
 	counter-increment: section;
 	margin-left: 4ch; 
+	font-size: 1.15em;
 }
 
 .bylaws-article::before,
@@ -68,4 +69,8 @@
 .bylaws-articles ol:not(.bylaws-article-sections) {
 	margin: 1em auto 1em 8ch;
 	padding: 0;
+}
+
+.inline-subhead {
+	font-size: 1.15em;
 }
