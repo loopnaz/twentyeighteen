@@ -40,37 +40,37 @@ main nav ul li a svg {
 }
 
 /* Red */
-main + nav ul li:nth-of-type(1) a {
+main + nav ul li:nth-of-type(7n+1) a {
 	background: rgba(198,12,48,0.77);
 }
 
 /* Blue */
-main + nav ul li:nth-of-type(2) a {
+main + nav ul li:nth-of-type(7n+2) a {
 	background: rgba(0,161,222,0.77);
 }
 
 /* Brown */
-main + nav ul li:nth-of-type(3) a {
+main + nav ul li:nth-of-type(7n+3) a {
 	background: rgba(98,54,27,0.77);
 }
 
 /* Green */
-main + nav ul li:nth-of-type(4) a {
+main + nav ul li:nth-of-type(7n+4) a {
 	background: rgba(0,155,58,0.77);
 }
 
 /* Orange */
-main + nav ul li:nth-of-type(5) a {
+main + nav ul li:nth-of-type(7n+5) a {
 	background: rgba(249,70,28,0.77);
 }
 
 /* Purple */
-main + nav ul li:nth-of-type(6) a {
-	background: rgba(82,135,152,0.77);
+main + nav ul li:nth-of-type(7n+6) a {
+	background: rgba(82,35,152,0.77);
 }
 
 /* Pink */
-main + nav ul li:nth-of-type(7) a {
+main + nav ul li:nth-of-type(7n+7) a {
 	background: rgba(226,126,166,0.77);
 }
 
@@ -78,4 +78,3 @@ main + nav ul li a:hover {
 	opacity: 1;
 	background: none;
 }
-

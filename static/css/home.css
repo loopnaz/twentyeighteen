@@ -1,21 +1,29 @@
-.home {
-	display: grid;
-}
-
-.home {
-	grid-template-columns: repeat(auto-fit, minmax(auto, 50vw));
-}
-
 .home main {
-	width: 100vw;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+	max-width: 100vw;
 }
 
-.home svg {
-	max-width: 50vw;
+.home main,
+.home .block a {
+	color: #fff;
+}
+
+.home .block a {
+	text-decoration: none;
 }
 
 .home .center svg {
-	max-width: unset;
+	min-width: 50vw;
+}
+
+.center figure {
+	margin: auto;
+}
+
+.has-figure {
+	padding: calc(32px + 1em) 1em 1em 1em;
+	justify-content: center;
 }
 
 .home nav ul {
@@ -23,6 +31,75 @@
 }
 
 .home section {
-	background-color: rgba(0,0,0,0.44);
-	padding-top: 3em;
+	background: rgba(0,0,0,0.44);
+}
+
+.block:nth-of-type(2) {
+	grid-column-start: 1;
+}
+
+.home .block > a {
+	width: 100%;
+	min-height: 300px;
+	height: 100%;
+}
+
+.home .block article {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	justify-content: space-between;
+	text-align: center;
+	padding: 2em 0.5em;
+	max-width: 100%;
+	min-height: 320px;
+}
+
+/* Red */
+.home .block:nth-of-type(7n+6) {
+	background: rgba(198,12,48,0.77);
+}
+
+/* Blue */
+.home .block:nth-of-type(7n+7) {
+	background: rgba(0,161,222,0.77);
+}
+
+/* Brown */
+.home .block:nth-of-type(7n+8) {
+	background: rgba(98,54,27,0.77);
+}
+
+/* Green */
+.home .block:nth-of-type(7n+2) {
+	background: rgba(0,155,58,0.77);
+}
+
+/* Orange */
+.home .block:nth-of-type(7n+3) {
+	background: rgba(249,70,28,0.77);
+}
+
+/* Purple */
+.home .block:nth-of-type(7n+4) {
+	background: rgba(82,35,152,0.77);
+}
+
+/* Pink */
+.home .block:nth-of-type(7n+5) {
+	background: rgba(226,126,166,0.77);
+}
+
+.home .block ul {
+	text-align: left;
+	list-style-image: url("img/svg/chicago-star-white.svg");
+	padding-left: 1.5em;
+}
+
+.home .block .post-date {
+	margin-left: 2ch;
+}
+
+.home .block p {
+	font-weight: 600;
 }
