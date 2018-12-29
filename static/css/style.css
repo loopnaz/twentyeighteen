@@ -187,19 +187,19 @@ main > article {
 	counter-reset: figure;
 }
 
-figcaption::before {
+figure:not(.avatar) figcaption::before {
 	content: "Figure " counter(figure, decimal) ". ";
 	counter-increment: figure;
 }
 
-figcaption::before,
+figure:not(.avatar) figcaption::before,
 figcaption * {
 	font-size: smaller;
 	font-weight: 600;
 	color: #acacac;
 }
 
-figcaption * {
+figure:not(.avatar) figcaption * {
 	display: inline;
 }
 
