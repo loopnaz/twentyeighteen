@@ -178,6 +178,23 @@ main ul {
 	list-style: square url('/img/svg/chicago-star.svg') outside;
 }
 
+figcaption::before {
+	content: "Figure " counter(figure, decimal) ". ";
+	counter-increment: figure;
+}
+
+figcaption::before,
+figcaption p {
+	font-size: smaller;
+	font-weight: 600;
+	color: #acacac;
+}
+
+figcaption p {
+	display: inline;
+}
+
+
 /* Navigation */
 nav ul {
 	list-style: none;
@@ -322,6 +339,7 @@ body > footer {
 .content {
 	width: calc(100% - 2em);
 	max-width: 49.5em;
+	counter-reset: figure;
 }
 
 main > article header:not(.background-image) {
