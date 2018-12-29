@@ -343,6 +343,7 @@ main > article header.background-image {
 article header.background-image h1 {
 	flex: 0 0 auto;
 	margin: auto;
+	padding-top: 32px;
 }
 
 article header.background-image p {
