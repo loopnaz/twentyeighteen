@@ -4,9 +4,9 @@
 {{ if .Params.socialImage }}
 <meta name="og:image" content="{{ (print .Site.BaseURL "img/" .Params.socialImage.type "/" .Params.socialImage.src "." .Params.socialImage.type) }}">
 {{ else if  .Params.thumbnail }}
-<meta property="og:image" content="{{ (print .Site.BaseURL "img/" .Params.thumbnail.type "/" .Params.thumbnail.src "_thumbnail." .Params.thumbnail.type) }}" />
+<meta property="og:image" content="{{ (print .Site.BaseURL "img/" .Params.thumbnail.type "/" .Params.thumbnail.src "." .Params.thumbnail.type) }}" />
 {{ else }}
-<meta name="twitter:image" content="{{ (print "/img/png/logo-square.png") }}">
+<meta name="twitter:image" content="{{ (print .Site.BaseURL "img/png/logo-square.png") }}">
 {{ end }}
 {{ if .Params.meta.description }}
 <meta property="og:description" content="{{ .Params.meta.description }}" />
