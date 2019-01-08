@@ -11,7 +11,7 @@
 {{ if .Params.meta.description }}
 <meta property="og:description" content="{{ .Params.meta.description }}" />
 {{ else }}
-<meta property="og:description" content="{{ .Content }}" />
+<meta property="og:description" content="{{ .Content | truncate 200 }}" />
 {{ end }}
 <meta property="og:site_name" content="{{ .Site.Title }}" />
 <meta property="fb:admins" content="{{ .Site.Params.social.facebookID }}" /> 

@@ -4,7 +4,7 @@
 {{ if .Params.meta.description }}
 	<meta name="twitter:description" content="{{ .Params.meta.description }}">
 {{ else }}
-	<meta name="twitter:description" content="{{ .Content }}">
+	<meta name="twitter:description" content="{{ .Content | truncate 200 }}">
 {{ end }}
 {{ if .Site.Params.author.twitter }}
 <meta name="twitter:creator" content="@{{ .Site.Params.author.twitter }}">
