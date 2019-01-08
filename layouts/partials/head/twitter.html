@@ -13,8 +13,11 @@
 {{ end }}
 {{ if .Params.socialImage }}
 <meta name="twitter:image" content="{{ (print .Site.BaseURL "img/" .Params.socialImage.type "/" .Params.socialImage.src "." .Params.socialImage.type) }}">
+<meta name="twitter:image:alt" content="{{ .Params.socialImage.alt }}">
 {{ else if  .Params.thumbnail }}
 <meta name="twitter:image" content="{{ (print .Site.BaseURL "img/" .Params.thumbnail.type "/" .Params.thumbnail.src "." .Params.thumbnail.type) }}">
+<meta name="twitter:image:alt" content="{{ .Params.thumbnail.alt }}">
 {{ else }}
 <meta name="twitter:image" content="{{ (print .Site.BaseURL "img/png/logo-square.png") }}">
+<meta name="twitter:image:alt" content="The Loop Church of the Nazarene and Compassionate Ministries (Chicago)">
 {{ end }}
