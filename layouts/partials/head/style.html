@@ -1,6 +1,28 @@
 <style type="text/css">
-	{{ if eq $.Site.Params.minify true }}{{ readFile "themes/twentyeighteen/static/css/style.min.css" | safeCSS }}
-	{{ else }}{{ readFile "/themes/twentyeighteen/static/css/style.css" | safeCSS }}
+	{{ $base := resources.Get "css/style.css" }}
+	{{ $bylaws := resources.Get "css/bylaws.css" }}
+	{{ $form := resources.Get "css/form.css" }}
+	{{ $home := resources.Get "css/home.css" }}
+	{{ $list := resources.Get "css/list.css" }}
+	{{ $post := resources.Get "css/post.css" }}
+	{{ if .Params.form }}
+		{{ $style := slice $base $form | resources.Concat "bundle-form.css" | minify | fingerprint }}
+		{{ $style.Content | safeCSS }}
+	{{ end }}
+	{{ if .IsHome }}
+		{{ $style := slice $base $home | resources.Concat "bundle-home.css" | minify | fingerprint }}
+		{{ $style.Content | safeCSS }}
+	{{ end }}
+	{{ if or (eq .Kind "section") (eq .Kind "taxonomy") }}
+		{{ $style := slice $base $list | resources.Concat "bundle-list.css" | minify | fingerprint }}
+		{{ $style.Content | safeCSS }}
+	{{ end }}
+	{{ with .Site.GetPage "section" "bylaws" }}
+		{{ $style := slice $base $bylaws | resources.Concat "bundle-bylaws.css" | minify | fingerprint }}
+		{{ $style.Content | safeCSS }}
+	{{ end }}
+	{{ with .Site.GetPage "section" "post" }}
+		{{ $style := slice $base $post | resources.Concat "bundle-post.css" | minify | fingerprint }}
+		{{ $style.Content | safeCSS }}
 	{{ end }}
 </style>
-

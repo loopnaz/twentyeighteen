@@ -1,0 +1,80 @@
+/* List Pages */
+main nav,
+main + nav {
+	margin: 1em;
+	max-width: 100%;
+}
+
+.partner main nav {
+	width: 100%;
+}
+
+main nav ul,
+main + nav ul {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(calc(320px - 2em),1fr));
+	grid-gap: 1em;
+}
+
+main nav ul li,
+main + nav ul li {
+	font-size: 2em;
+	font-weight: 600;
+	text-align: center;
+}
+
+main nav ul li a,
+main + nav ul li a {
+	min-height: calc(320px - 2em);
+	color: #fff;
+	text-shadow: 1px 1px 2px rgba(0,0,0,0.77);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 0 1em;
+}
+
+main nav ul li a svg {
+	max-width: 100%;
+	height: auto;
+}
+
+/* Red */
+main + nav ul li:nth-of-type(7n+1) a {
+	background: rgba(198,12,48,0.77);
+}
+
+/* Blue */
+main + nav ul li:nth-of-type(7n+2) a {
+	background: rgba(0,161,222,0.77);
+}
+
+/* Brown */
+main + nav ul li:nth-of-type(7n+3) a {
+	background: rgba(98,54,27,0.77);
+}
+
+/* Green */
+main + nav ul li:nth-of-type(7n+4) a {
+	background: rgba(0,155,58,0.77);
+}
+
+/* Orange */
+main + nav ul li:nth-of-type(7n+5) a {
+	background: rgba(249,70,28,0.77);
+}
+
+/* Purple */
+main + nav ul li:nth-of-type(7n+6) a {
+	background: rgba(82,35,152,0.77);
+}
+
+/* Pink */
+main + nav ul li:nth-of-type(7n+7) a {
+	background: rgba(226,126,166,0.77);
+}
+
+main + nav ul li a:hover {
+	opacity: 1;
+	background: none;
+}
