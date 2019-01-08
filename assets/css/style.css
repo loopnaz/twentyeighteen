@@ -489,7 +489,7 @@ footer :not(.social) a:hover {
 	color: #fff !important;
 	display: block;
 	width: 25vw;
-	min-width: 150px;
+	min-width: 250px;
 	max-width: calc(100% - 2em);
 	margin: 0 auto;
 	text-align: center;
