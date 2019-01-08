@@ -2,9 +2,9 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="{{ .Site.BaseURL }}" />
 {{ if .Params.socialImage }}
-<meta name="twitter:image" content="{{ (print "/img/" .Params.socialImage.type "/" .Params.socialImage.src "." .Params.socialImage.type) }}">
+<meta name="og:image" content="{{ (print .Site.BaseURL "img/" .Params.socialImage.type "/" .Params.socialImage.src "." .Params.socialImage.type) }}">
 {{ else if  .Params.thumbnail }}
-<meta property="og:image" content="{{ (print "/img/" .Params.thumbnail.type "/" .Params.thumbnail.src "_thumbnail." .Params.thumbnail.type) }}" />
+<meta property="og:image" content="{{ (print .Site.BaseURL "img/" .Params.thumbnail.type "/" .Params.thumbnail.src "_thumbnail." .Params.thumbnail.type) }}" />
 {{ else }}
 <meta name="twitter:image" content="{{ (print "/img/png/logo-square.png") }}">
 {{ end }}
