@@ -1,7 +1,9 @@
 <meta property="og:title" content="{{ .Params.Title }}" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="{{ .Site.BaseURL }}" />
-{{ if .Params.thumbnail }}
+{{ if .Params.socialImage }}
+<meta name="twitter:image" content="{{ (print "/img/" .Params.socialImage.type "/" .Params.socialImage.src "." .Params.socialImage.type) }}">
+{{ else if  .Params.thumbnail }}
 <meta property="og:image" content="{{ (print "/img/" .Params.thumbnail.type "/" .Params.thumbnail.src "." .Params.thumbnail.type) }}" />
 {{ else }}
 <meta name="twitter:image" content="{{ (print "/img/png/logo-square.png") }}">
