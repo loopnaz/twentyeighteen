@@ -435,6 +435,9 @@ footer nav ul,
 main .center {
 	grid-column-start: 1;
 	grid-column-end: -1;
+}
+
+main .has-figure {
 	min-height: 50vh;
 }
 
