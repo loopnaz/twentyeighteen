@@ -9,6 +9,10 @@ sup {
 	font-size: 0.125em;
 }
 
+.post-date {
+	font-size: smaller;
+}
+
 .home {
 	max-width: 100vw;
 	overflow-x: hidden;
