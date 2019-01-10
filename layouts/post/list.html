@@ -1,20 +1,29 @@
 {{ define "main" }}
 	<main id="main">
-	<h1>{{ (pluralize (title .Type)) }}</h1>
-		<ul>
-			{{- range .Paginator.Pages }}
-				<li>
-					<h2><a href="{{.Permalink}}">{{.Title}}</a></h2>
-					<p>By 
-						{{- range .Params.authors }}
-							{{- with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize .)) }}
-								<span><a href="{{.Permalink}}">{{.Params.name.full}}</a><span>
+		<article>
+			{{if isset .Params "thumbnail" }}
+				<header class="background-image" style="background-image:url({{ (print "/img/" .Params.thumbnail.type "/" .Params.thumbnail.src "." .Params.thumbnail.type) }}); {{if .Params.thumbnail.position}}background-position:{{.Params.thumbnail.position}};{{end}}">
+			{{else}}
+				<header>
+			{{end}}
+				<h1>{{ .Title }}</h1>
+				<p>{{.Params.thumbnail.alt}}</p>
+			</header>
+			<ul>
+				{{- range .Paginator.Pages }}
+					<li>
+						<h2><a href="{{.Permalink}}">{{.Title}}</a></h2>
+						<p>By 
+							{{- range .Params.authors }}
+								{{- with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize .)) }}
+									<span><a href="{{.Permalink}}">{{.Params.name.full}}</a><span>
+								{{ end }}
 							{{ end }}
-						{{ end }}
-						<span>on {{.PublishDate.Format "Monday, January 2, 2006"}}</span>
-					</p>
-				</li>
-			{{ end }}
-		</ul>
+							<span>on {{.PublishDate.Format "Monday, January 2, 2006"}}</span>
+						</p>
+					</li>
+				{{ end }}
+			</ul>
+		</article>
 	</main>
 {{ end }}
