@@ -1,9 +1,0 @@
-<!DOCTYPE html>
-<html>
-    {{- partial "head/site-head.html" . }}
-	<body class="{{ .Kind }} {{ .Type }}">
-		{{- partialCached "header/site-header.html" . -}}
-		{{- block "main" . }}{{- end }}
-        {{- partialCached "footer/site-footer.html" . -}}
-    </body>
-</html>
