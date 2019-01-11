@@ -103,8 +103,10 @@ html {
 	font-family: 'Raleway', sans-serif;
 }
 
-h1 {
+body:not(.bylaws) h1 {
 	font-size: 3em;
+	font-family: "Permanent Marker", cursive;
+	font-weight: 400;
 }
 
 h1,

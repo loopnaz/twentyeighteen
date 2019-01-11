@@ -19,8 +19,13 @@ main + nav ul {
 main nav ul li,
 main + nav ul li {
 	font-size: 2em;
-	font-weight: 600;
+	font-weight: 400;
 	text-align: center;
+}
+
+body:not(.partner) main + nav ul li {
+	font-family: "Permanent Marker", cursive;
+	transform: rotate(-1deg);
 }
 
 main nav ul li a,

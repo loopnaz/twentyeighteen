@@ -8,21 +8,19 @@
 	{{ if .Params.form }}
 		{{ $style := slice $base $form | resources.Concat "bundle-form.css" | minify | fingerprint }}
 		{{ $style.Content | safeCSS }}
-	{{ end }}
-	{{ if .IsHome }}
+	{{ else if .IsHome }}
 		{{ $style := slice $base $home | resources.Concat "bundle-home.css" | minify | fingerprint }}
 		{{ $style.Content | safeCSS }}
-	{{ end }}
-	{{ if or (eq .Kind "section") (eq .Kind "taxonomy") }}
+	{{ else if or (and (eq .Kind "section") (ne .Type "bylaws")) (eq .Kind "taxonomy") }}
 		{{ $style := slice $base $list | resources.Concat "bundle-list.css" | minify | fingerprint }}
 		{{ $style.Content | safeCSS }}
-	{{ end }}
-	{{ with .Site.GetPage "section" "bylaws" }}
+	{{ else if .Site.GetPage "section" "bylaws" }}
 		{{ $style := slice $base $bylaws | resources.Concat "bundle-bylaws.css" | minify | fingerprint }}
 		{{ $style.Content | safeCSS }}
-	{{ end }}
-	{{ with .Site.GetPage "section" "post" }}
+	{{ else if .Site.GetPage "section" "post" }}
 		{{ $style := slice $base $post | resources.Concat "bundle-post.css" | minify | fingerprint }}
 		{{ $style.Content | safeCSS }}
+	{{ else }}
+		{{ $style := $base }}
 	{{ end }}
 </style>

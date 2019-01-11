@@ -1,4 +1,4 @@
 <link href="https://fonts.googleapis.com/css?family=Raleway:300,600&amp;subset=latin-ext" rel="stylesheet">
-{{ with .IsHome }}
+{{ if or (.IsHome) (or (eq .Kind "page") ((and (eq .Kind "section") (ne .Type "bylaws")))) }}
 	<link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
 {{ end }}
