@@ -1,10 +1,12 @@
 <meta property="og:title" content="{{ .Params.Title }}" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="{{ .Site.BaseURL }}" />
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
+<meta property="og:url" content="{{ .Permalink }}" />
 {{ if .Params.socialImage }}
-<meta name="og:image" content="{{ (print "/img/" .Params.socialImage.type "/" .Params.socialImage.src "." .Params.socialImage.type) }}">
+<meta name="og:image" content="{{ (print "img/" .Params.socialImage.type "/" .Params.socialImage.src "." .Params.socialImage.type) | absURL }}">
 {{ else if  .Params.thumbnail }}
-<meta property="og:image" content="{{ (print "/img/" .Params.thumbnail.type "/" .Params.thumbnail.src "." .Params.thumbnail.type) }}" />
+<meta property="og:image" content="{{ (print "img/" .Params.thumbnail.type "/" .Params.thumbnail.src "." .Params.thumbnail.type) | absURL }}" />
+{{ else }}
+<meta name="og:image" content="{{ (print "img/png/from-skydeck-southeast.png") | absURL }}">
 {{ end }}
 {{ if .Params.meta.description }}
 <meta property="og:description" content="{{ .Params.meta.description }}" />
