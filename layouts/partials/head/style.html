@@ -14,10 +14,10 @@
 	{{ else if or (and (eq .Kind "section") (ne .Type "bylaws")) (eq .Kind "taxonomy") }}
 		{{ $style := slice $base $list | resources.Concat "bundle-list.css" | minify | fingerprint }}
 		{{ $style.Content | safeCSS }}
-	{{ else if .Site.GetPage "section" "bylaws" }}
+	{{ else if (and (eq .Kind "section") (eq .Type "bylaws")) }}
 		{{ $style := slice $base $bylaws | resources.Concat "bundle-bylaws.css" | minify | fingerprint }}
 		{{ $style.Content | safeCSS }}
-	{{ else if .Site.GetPage "section" "post" }}
+	{{ else if (and (eq .Kind "page") (eq .Type "post")) }}
 		{{ $style := slice $base $post | resources.Concat "bundle-post.css" | minify | fingerprint }}
 		{{ $style.Content | safeCSS }}
 	{{ else }}

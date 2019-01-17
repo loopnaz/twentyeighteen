@@ -83,3 +83,13 @@ main + nav ul li a:hover {
 	opacity: 1;
 	background: none;
 }
+
+.pagination {
+	list-style: none;
+	display: flex;
+	justify-content: space-around;
+	padding: 0;
+	min-width: 320px;
+	max-width: 480px;
+	margin: 0 auto 2em auto;
+}
