@@ -15,8 +15,7 @@ navButton.addEventListener('click', function(event) {
 })
 
 // Add Prayer Walk Count
-//var count = Math.round(Math.abs((today.getTime() - startPrayerWalk.getTime() - (oneDay * skipDays))/(oneDay)))
-var count = Math.round(Math.abs(((today - startPrayerWalk) - (oneDay * skipDays))/(oneDay)) + 1)
+var count = Math.round(Math.abs((today.getTime() - startPrayerWalk.getTime() - (oneDay * skipDays))/(oneDay)))
 
 var animateCount = function(elem, start, end, duration) {
 	var range = end - start
