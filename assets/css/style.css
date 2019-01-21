@@ -331,6 +331,8 @@ body > header svg {
 	height: 100%;
 	width: auto;
 	padding: 2px;
+	max-width: 155px;
+	max-height: 32px;
 }
 
 /* Footer */
