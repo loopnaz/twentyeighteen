@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ .Site.LanguageCode }}">
     {{- partial "head/site-head.html" . }}
 	<body class="{{ .Kind }} {{ .Type }}">
 		{{- partialCached "header/site-header.html" . -}}
