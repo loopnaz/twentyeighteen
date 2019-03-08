@@ -10,10 +10,10 @@
 {{ else if .IsHome }}
 	{{ $style := slice $base $home | resources.Concat "bundle-home.css" | minify | fingerprint }}
 	<link rel="stylesheet" href="{{ $style.Permalink }}"/>
-{{ else if or (and (eq .Kind "section") (ne .Type "bylaws")) (eq .Kind "taxonomy") }}
+{{ else if or (and (eq .Kind "section") (and (ne .Type "bylaws") (ne .Type "conflict-of-interest"))) (eq .Kind "taxonomy") }}
 	{{ $style := slice $base $list | resources.Concat "bundle-list.css" | minify | fingerprint }}
 	<link rel="stylesheet" href="{{ $style.Permalink }}"/>
-{{ else if eq .Type "bylaws" }}
+{{ else if or (eq .Type "bylaws") (eq .Type "conflict-of-interest") }}
 	{{ $style := slice $base $bylaws | resources.Concat "bundle-bylaws.css" | minify | fingerprint }}
 	<link rel="stylesheet" href="{{ $style.Permalink }}"/>
 {{ else if eq .Type "post" }}

@@ -58,6 +58,8 @@ button:-moz-focusring,
 
 fieldset {
 	padding: 0.35em 0.75em 0.625em;
+	border-radius: 15px;
+	border: 1px solid #cacaca;
 }
 
 legend {
@@ -67,10 +69,15 @@ legend {
 	max-width: 100%;
 	padding: 0;
 	white-space: normal;
+	font-weight: 600;
 }
 
 textarea {
 	overflow: auto;
+}
+
+fieldset textarea {
+	width: 100%;
 }
 
 form button {
