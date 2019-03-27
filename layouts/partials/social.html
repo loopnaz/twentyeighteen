@@ -3,42 +3,55 @@
 		{{ with .Site.Params.social.twitter }}
 		<li>
 			<a class="twitter" href="https://twitter.com/{{.}}/">
+			{{ if (fileExists "static/img/icons/twitter.svg") -}}
 				{{ readFile "static/img/icons/twitter.svg" | safeHTML }}
+			{{ else }}
+			Twitter
+			{{- end }}
 			</a>
 		</li>
 		{{ end }}
 		{{ with .Site.Params.social.facebook }}
 		<li>
 			<a class="facebook" href="https://facebook.com/{{.}}/">
+			{{ if (fileExists "static/img/icons/facebook.svg") -}}
 				{{ readFile "static/img/icons/facebook.svg" | safeHTML }}
+			{{ else }}
+			Facebook
+			{{- end }}
 			</a>
 		</li>
 		{{ end }}
 		{{ with .Site.Params.social.linkedin }}
 		<li>
 			<a class="linkedin" href="https://www.linkedin.com/company/{{.}}/">
+			{{ if (fileExists "static/img/icons/linkedin.svg") -}}
 				{{ readFile "static/img/icons/linkedin.svg" | safeHTML }}
-			</a>
-		</li>
-		{{ end }}
-		{{ with .Site.Params.social.googlePlus }}
-		<li>
-			<a class="linkedin" href="https://plus.google.com/{{.}}/">
-				{{ readFile "static/img/icons/linkedin.svg" | safeHTML }}
+			{{ else }}
+			LinkedIn
+			{{- end }}
 			</a>
 		</li>
 		{{ end }}
 		{{ with .Site.Params.social.instagram }}
 		<li>
 			<a class="instagram" href="https://instagram.com/{{.}}/">
+			{{ if (fileExists "static/img/icons/instagram.svg") -}}
 				{{ readFile "static/img/icons/instagram.svg" | safeHTML }}
+			{{ else }}
+			Instagram
+			{{- end }}
 			</a>
 		</li>
 		{{ end }}
 		{{ with .Site.Params.social.gitHub }}
 		<li>
 			<a class="github" href="https://github.com/{{.}}/">
+			{{ if (fileExists "static/img/icons/github.svg") -}}
 				{{ readFile "static/img/icons/github.svg" | safeHTML }}
+			{{ else }}
+			GitHub
+			{{- end }}
 			</a>
 		</li>
 		{{ end }}
